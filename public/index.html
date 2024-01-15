@@ -4,55 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>简易五子棋</title>
+    <title>简易五子棋游戏大厅</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .room-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #F8F9FA;
+        }
+
+        .room-item span {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .room-item button {
+            flex: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row mt-3">
-            <div class="col-sm-12 col-lg-6">
-                <span id="my-color" class="mb-3"></span>
-                <span id="my-num" class="mb-3 ms-3"></span>
-                <span id="my-info" class="mb-3 ms-3"></span>
-                <canvas id="canvas" width="600" height="600"></canvas>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="nickname" class="form-label">昵称：</label>
-                        <input type="text" id="nickname" class="form-control"
-                            style="width: 150px;display: inline-block;" placeholder="设置昵称" />
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="chat-list" class="form-label">消息列表：</label>
-                        <div id="chat-list" class="form-control" style="height: 400px; overflow-y: auto;"></div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col col-md-8">
-                        <label for="message" class="form-label">发送：</label>
-                        <input type="text" id="message" class="form-control" style="width:360px; display: inline-block;"
-                            placeholder="需要发送的消息内容" />
-                    </div>
-                    <div class="col">
-                        <label class="invisible">.</label>
-                        <button id="send-message" class="btn btn-primary">发送</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <button id="my-reset" class="btn btn-primary">重新开局</button>
-                        注：游客发现如果没有棋手请按F5刷新加入对战。
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container mt-3">
+        <h1>游戏大厅</h1>
+        <div id="room-list-container"></div>
+        <button id="create-room-button" class="btn btn-primary">创建房间</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
-    <script src="client.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

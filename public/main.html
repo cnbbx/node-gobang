@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>简易五子棋</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <style>
+        .modal-dialog {
+            position: fixed !important;
+            top: 20% !important;
+            left: 15% !important;
+        }
+
+        #canvas {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-sm-12 col-lg-6">
+                <span id="my-color" class="mb-3"></span>
+                <span id="my-num" class="mb-3 ms-3"></span>
+                <span id="my-info" class="mb-3 ms-3"></span>
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="nickname" class="form-label">昵称：</label>
+                        <input type="text" id="nickname" class="form-control"
+                            style="width: 150px;display: inline-block;" placeholder="设置昵称" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="chat-list" class="form-label">消息列表：</label>
+                        <div id="chat-list" class="form-control" style="height: 400px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="message" class="form-label">发送：</label>
+                        <input type="text" id="message" class="form-control" style="width:70%; display: inline-block;"
+                            placeholder="需要发送的消息内容" />
+                        <button id="send-message" class="btn btn-primary">发送</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button id="my-reset" class="btn btn-primary">重新开局</button>
+                        <button id="my-black" class="btn btn-secondary">返回游戏大厅</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
